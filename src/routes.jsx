@@ -1,3 +1,5 @@
+import Layout from "./Components/Layout/Layout";
+
 const routes = [
   {
     element: <div>Login</div>,
@@ -8,7 +10,7 @@ const routes = [
     path: "/register",
   },
   {
-    element: <div>layout</div>,
+    element: <Layout />,
     path: "/",
     children: [
       {
