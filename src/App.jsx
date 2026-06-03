@@ -22,6 +22,7 @@ function App() {
           </p>
         </div>
         <a href="http://localhost:3000/auth/github">Login</a>
+        <a href="http://localhost:3000/auth/logout">Logout</a>
       </section>
 
       <div className="ticks"></div>
