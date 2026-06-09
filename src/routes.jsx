@@ -1,3 +1,4 @@
+import Index from "./Components/Index/Index";
 import Layout from "./Components/Layout/Layout";
 import Profile from "./Components/Profile/Profile";
 
@@ -15,9 +16,12 @@ const routes = [
     path: "/",
     children: [
       {
-        element: <div>index</div>,
+        element: <Index />,
         index: true,
       },
+      { element: <div>search</div>, path: "search" },
+      { element: <div>create</div>, path: "create" },
+      { element: "likes", path: "likes" },
       {
         element: <Profile />,
         path: "profile/:username",
@@ -25,10 +29,6 @@ const routes = [
       {
         element: <div>All users</div>,
         path: "allUsers",
-      },
-      {
-        element: <div>Create post</div>,
-        path: "createPost",
       },
       { element: <div>post page</div>, path: "p/:postId" },
       { element: <div>Following</div>, path: "following" },
