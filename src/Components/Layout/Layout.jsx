@@ -8,7 +8,7 @@ const Layout = () => {
       <HeaderBar />
       <div className="flex flex-1 flex-col-reverse sm:flex-row">
         <Navigation />
-        <div className="mx-auto max-w-7xl flex-1 sm:mx-0">
+        <div className="flex max-w-7xl flex-1 flex-col items-center sm:mx-0">
           <Outlet />
         </div>
       </div>
