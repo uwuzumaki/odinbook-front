@@ -1,7 +1,11 @@
+// Displays all posts (potentially limited to 7 days)
+import Card from "../../ui/Card";
+
 const Index = () => {
   return (
-    <div className="w-full min-w-90 border sm:max-w-90 sm:min-w-146">
-      <div>index123</div>
+    <div className="mb-1 w-full min-w-90 sm:max-w-90 sm:min-w-146">
+      <Card />
+      <Card />
     </div>
   );
 };
