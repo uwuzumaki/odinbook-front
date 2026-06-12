@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-// Search for username then displayname and display both
-// Loading skeletons for when grabbing data
+// after creating the post go to the post
 // bsky layout
-const Search = () => {
+
+const Create = () => {
   const [input, setInput] = useState("");
 
   const handleChange = (e) => {
@@ -16,17 +16,17 @@ const Search = () => {
     console.log(input);
     //submit to backend
   };
-
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <label>Search</label>
+        <label>create</label>
         <input onChange={handleChange} value={input} />
+        {/* Replace input with an icon or something */}
+        <input type="file" />
         <button type="submit">123</button>
       </form>
-      <div>results here</div>
     </>
   );
 };
 
-export default Search;
+export default Create;
