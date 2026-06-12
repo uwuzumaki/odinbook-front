@@ -1,6 +1,7 @@
 import Index from "./Components/Index/Index";
 import Layout from "./Components/Layout/Layout";
 import Profile from "./Components/Profile/Profile";
+import Search from "./Components/Search/Search";
 
 const routes = [
   {
@@ -19,7 +20,7 @@ const routes = [
         element: <Index />,
         index: true,
       },
-      { element: <div>search</div>, path: "search" },
+      { element: <Search />, path: "search" },
       { element: <div>create</div>, path: "create" },
       { element: "likes", path: "likes" },
       {
