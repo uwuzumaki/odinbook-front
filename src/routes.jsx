@@ -1,6 +1,7 @@
 import Create from "./Components/Create";
 import Index from "./Components/Index/Index";
 import Layout from "./Components/Layout/Layout";
+import Likes from "./Components/Likes/Likes";
 import Profile from "./Components/Profile/Profile";
 import Search from "./Components/Search/Search";
 
@@ -23,7 +24,7 @@ const routes = [
       },
       { element: <Search />, path: "search" },
       { element: <Create />, path: "create" },
-      { element: "likes", path: "likes" },
+      { element: <Likes />, path: "likes" },
       {
         element: <Profile />,
         path: "profile/:username",
