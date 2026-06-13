@@ -6,6 +6,9 @@ import PostPage from "./Components/PostPage/PostPage";
 import Profile from "./Components/Profile/Profile";
 import Search from "./Components/Search/Search";
 import UserIndex from "./Components/UserIndex/UserIndex";
+import Following from "./Components/Following/Following";
+import Followers from "./Components/Followers/Followers";
+import FollowerRequests from "./Components/FollowerRequests/FollowerRequests";
 
 const routes = [
   {
@@ -36,9 +39,9 @@ const routes = [
         path: "allUsers",
       },
       { element: <PostPage />, path: "p/:postId" },
-      { element: <div>Following</div>, path: "following" },
-      { element: <div>Followers</div>, path: "followers" },
-      { element: <div>Follower Requests</div>, path: "followerRequests" },
+      { element: <Following />, path: "u/:username/following" },
+      { element: <Followers />, path: "u/:username/followers" },
+      { element: <FollowerRequests />, path: "followerRequests" },
     ],
   },
 ];
