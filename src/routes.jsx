@@ -4,6 +4,7 @@ import Layout from "./Components/Layout/Layout";
 import Likes from "./Components/Likes/Likes";
 import Profile from "./Components/Profile/Profile";
 import Search from "./Components/Search/Search";
+import UserIndex from "./Components/UserIndex/UserIndex";
 
 const routes = [
   {
@@ -30,7 +31,7 @@ const routes = [
         path: "profile/:username",
       },
       {
-        element: <div>All users</div>,
+        element: <UserIndex />,
         path: "allUsers",
       },
       { element: <div>post page</div>, path: "p/:postId" },
