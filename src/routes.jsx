@@ -2,6 +2,7 @@ import Create from "./Components/Create/Create";
 import Index from "./Components/Index/Index";
 import Layout from "./Components/Layout/Layout";
 import Likes from "./Components/Likes/Likes";
+import PostPage from "./Components/PostPage/PostPage";
 import Profile from "./Components/Profile/Profile";
 import Search from "./Components/Search/Search";
 import UserIndex from "./Components/UserIndex/UserIndex";
@@ -34,7 +35,7 @@ const routes = [
         element: <UserIndex />,
         path: "allUsers",
       },
-      { element: <div>post page</div>, path: "p/:postId" },
+      { element: <PostPage />, path: "p/:postId" },
       { element: <div>Following</div>, path: "following" },
       { element: <div>Followers</div>, path: "followers" },
       { element: <div>Follower Requests</div>, path: "followerRequests" },
