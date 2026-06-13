@@ -1,4 +1,4 @@
-import Create from "./Components/Create";
+import Create from "./Components/Create/Create";
 import Index from "./Components/Index/Index";
 import Layout from "./Components/Layout/Layout";
 import Likes from "./Components/Likes/Likes";
