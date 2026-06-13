@@ -28,7 +28,7 @@ const routes = [
       { element: <Likes />, path: "likes" },
       {
         element: <Profile />,
-        path: "profile/:username",
+        path: "u/:username",
       },
       {
         element: <UserIndex />,
