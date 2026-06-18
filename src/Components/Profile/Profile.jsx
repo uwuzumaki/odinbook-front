@@ -1,17 +1,20 @@
+import { use, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Card from "../../ui/Card";
+import { PageContext } from "../../contexts/PageContext";
 
 const Profile = () => {
   const { username } = useParams();
+  const title = use(PageContext);
+
+  useEffect(() => {
+    title.setPageTitle(username);
+  });
 
   return (
     <>
       <div className="flex flex-col items-start">
         <div>displayname</div>
-        <div className="flex w-full flex-row justify-between">
-          <div>test</div>
-          <div>test2</div>
-        </div>
         <div>username</div>
         <div className="flex">
           <div>followers</div>
