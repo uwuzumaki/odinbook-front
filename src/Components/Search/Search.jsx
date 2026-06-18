@@ -1,10 +1,16 @@
-import { useState } from "react";
+import { useState, useEffect, use } from "react";
+import { PageContext } from "../../contexts/PageContext";
 
 // Search for username then displayname and display both
 // Loading skeletons for when grabbing data
 // bsky layout
 const Search = () => {
   const [input, setInput] = useState("");
+  const title = use(PageContext);
+
+  useEffect(() => {
+    title.setPageTitle("Search");
+  });
 
   const handleChange = (e) => {
     setInput(e.target.value);
