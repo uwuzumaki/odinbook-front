@@ -1,5 +1,10 @@
+import { use } from "react";
+import { PageContext } from "../../contexts/PageContext";
+
 const HeaderBar = () => {
-  return <div>HeaderBar</div>;
+  const title = use(PageContext);
+
+  return <div>{title.pageTitle}</div>;
 };
 
 export default HeaderBar;
