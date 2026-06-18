@@ -1,10 +1,16 @@
-import { useState } from "react";
+import { useState, use, useEffect } from "react";
+import { PageContext } from "../../contexts/PageContext";
 
 // after creating the post go to the post
 // bsky layout
 
 const Create = () => {
   const [input, setInput] = useState("");
+  const title = use(PageContext);
+
+  useEffect(() => {
+    title.setPageTitle("Create");
+  });
 
   const handleChange = (e) => {
     setInput(e.target.value);
