@@ -1,6 +1,14 @@
+import { useEffect, use } from "react";
 import Comment from "../../ui/Comment";
+import { PageContext } from "../../contexts/PageContext";
 
 const PostPage = () => {
+  const title = use(PageContext);
+
+  useEffect(() => {
+    title.setPageTitle("Post title maybe?");
+  });
+
   return (
     <>
       <div className="flex flex-col items-start">
