@@ -6,7 +6,7 @@ const Likes = () => {
   const title = use(PageContext);
 
   useEffect(() => {
-    title.setPageTile("Likes");
+    title.setPageTitle("Likes");
   });
 
   return (
