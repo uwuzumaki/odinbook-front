@@ -1,4 +1,13 @@
+import { useEffect, use } from "react";
+import { PageContext } from "../../contexts/PageContext";
+
 const followerRequests = () => {
+  const title = use(PageContext);
+
+  useEffect(() => {
+    title.setPageTitle("Follower Requests");
+  });
+
   return (
     <>
       <div className="flex flex-col items-start">
