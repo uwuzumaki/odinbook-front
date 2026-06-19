@@ -1,6 +1,6 @@
 const Card = () => {
   return (
-    <div className="mb-1 rounded-2xl border p-4">
+    <div className="-mt-px border bg-slate-50 p-4">
       <div className="flex justify-between">
         <div className="flex">
           <div className="mr-4">displayname</div>
