@@ -16,23 +16,23 @@ const Navigation = () => {
         <HomeIcon />
         <NavText text="Home" />
       </NavLink>
-      <NavLink to="search">
+      <NavLink location="search">
         <SearchIcon />
         <NavText text="Search" />
       </NavLink>
-      <NavLink to="create">
+      <NavLink location="create">
         <CreateIcon />
         <NavText text="Create" />
       </NavLink>
-      <NavLink to="likes">
+      <NavLink location="likes">
         <LikeIcon />
         <NavText text="Likes" />
       </NavLink>
-      <NavLink to="allUsers">
+      <NavLink location="allUsers">
         <UserIcon />
         <NavText text="Users" />
       </NavLink>
-      <NavLink to="u/user">
+      <NavLink location="u/user">
         <Icon icon="iProfile" />
         <NavText text="Profile" />
       </NavLink>
