@@ -5,7 +5,7 @@ const HeaderBar = () => {
   const title = use(PageContext);
 
   return (
-    <div className="border border-gray-200">
+    <div className="border-b border-gray-200">
       <div className="m-4">{title.pageTitle}</div>
     </div>
   );
