@@ -1,5 +1,6 @@
 import { useState, useEffect, use } from "react";
 import { PageContext } from "../../contexts/PageContext";
+import { SearchIcon } from "../../ui/Icons";
 
 // Search for username then displayname and display both
 // Loading skeletons for when grabbing data
@@ -25,10 +26,19 @@ const Search = () => {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <label>Search</label>
-        <input onChange={handleChange} value={input} />
-        <button type="submit">123</button>
+      <form className="flex" onSubmit={handleSubmit}>
+        <input
+          className="m-2 flex-2 rounded-lg bg-slate-200 p-2 hover:border-slate-700"
+          onChange={handleChange}
+          value={input}
+          placeholder="Search for Usernames or Display Names"
+        />
+        <button
+          className="m-2 rounded-lg p-2 text-slate-700 hover:cursor-pointer hover:bg-slate-200"
+          type="submit"
+        >
+          Search
+        </button>
       </form>
       <div>results here</div>
     </>
