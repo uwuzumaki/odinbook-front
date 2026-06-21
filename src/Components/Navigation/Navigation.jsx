@@ -1,33 +1,40 @@
-import { Link } from "react-router-dom";
+import NavLink from "../../ui/NavLink";
 import Icon from "../../ui/Icon";
+import {
+  CreateIcon,
+  HomeIcon,
+  LikeIcon,
+  SearchIcon,
+  UserIcon,
+} from "../../ui/Icons";
 
 const Navigation = () => {
   return (
-    <div className="w-min-[25vw] border-color-amber-50 flex flex-row justify-between border sm:flex-col sm:justify-center">
-      <Link className="flex" to="/">
-        <Icon icon="iHome" />
+    <div className="w-min-[25vw] flex flex-row justify-between pt-4 sm:mx-auto sm:flex-col sm:items-start sm:justify-start">
+      <NavLink location="/">
+        <HomeIcon />
         <div className="hidden md:block">Home</div>
-      </Link>
-      <Link className="flex" to="search">
-        <Icon icon="iSearch" />
+      </NavLink>
+      <NavLink to="search">
+        <SearchIcon />
         <div className="hidden md:block">Search</div>
-      </Link>
-      <Link className="flex" to="create">
-        <Icon icon="iCreate" />
+      </NavLink>
+      <NavLink to="create">
+        <CreateIcon />
         <div className="hidden md:block">Create</div>
-      </Link>
-      <Link className="flex" to="likes">
-        <Icon icon="iLikes" />
+      </NavLink>
+      <NavLink to="likes">
+        <LikeIcon />
         <div className="hidden md:block">Likes</div>
-      </Link>
-      <Link className="flex" to="allUsers">
-        <Icon icon="iUsers" />
+      </NavLink>
+      <NavLink to="allUsers">
+        <UserIcon />
         <div className="hidden md:block">Users</div>
-      </Link>
-      <Link className="flex" to="u/user">
-        <Icon icon="iProfile" />
-        <Link className="hidden md:block">Profile</Link>
-      </Link>
+      </NavLink>
+      <NavLink to="u/user">
+        {/* <Icon icon="iProfile" /> */}
+        <div className="hidden md:block">Profile</div>
+      </NavLink>
     </div>
   );
 };
