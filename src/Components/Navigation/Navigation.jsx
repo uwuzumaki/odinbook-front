@@ -33,7 +33,7 @@ const Navigation = () => {
         <NavText text="Users" />
       </NavLink>
       <NavLink location="u/user">
-        <Icon icon="iProfile" />
+        <Icon icon="p" />
         <NavText text="Profile" />
       </NavLink>
     </div>
