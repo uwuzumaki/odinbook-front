@@ -5,7 +5,7 @@ const NavLink = ({ children, location }) => {
     <>
       <Link
         to={location}
-        className="mt-4 mr-8 flex justify-center md:justify-start"
+        className="mt-4 mr-4 flex justify-center rounded-2xl p-1 sm:hover:bg-gray-200 md:justify-start lg:px-4"
       >
         {children}
       </Link>
