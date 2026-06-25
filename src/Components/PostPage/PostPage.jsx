@@ -1,6 +1,7 @@
 import { useEffect, use, useState } from "react";
 import Comment from "../../ui/Comment";
 import { PageContext } from "../../contexts/PageContext";
+import { LikeIcon, CommentIcon } from "../../ui/Icons";
 
 const PostPage = () => {
   const title = use(PageContext);
@@ -55,9 +56,11 @@ const PostPage = () => {
             <div className="flex items-end text-sm">likes</div>
           </div>
         </div>
-        <div className="flex py-2">
-          <div onClick={toggleCommentBox}>iComment</div>
-          <div>iLike</div>
+        <div className="flex pt-2">
+          <div className="mr-8" onClick={toggleCommentBox}>
+            <CommentIcon />
+          </div>
+          <LikeIcon />
         </div>
         <form
           className={`${commentBoxHidden ? "hidden" : "block"} flex w-full flex-col items-end`}
@@ -71,8 +74,9 @@ const PostPage = () => {
             Post
           </button>
         </form>
-        <Comment />
       </div>
+      <Comment />
+      <Comment />
     </>
   );
 };
