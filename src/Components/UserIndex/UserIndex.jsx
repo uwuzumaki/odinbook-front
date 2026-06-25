@@ -12,6 +12,7 @@ const UserIndex = () => {
   return (
     <>
       <User />
+      <User />
     </>
   );
 };
