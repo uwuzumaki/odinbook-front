@@ -2,7 +2,7 @@ const Icon = ({ icon }) => {
   return (
     <>
       <div>
-        <p>{icon}</p>
+        <p className="h-6 w-6 rounded-full border"></p>
       </div>
     </>
   );

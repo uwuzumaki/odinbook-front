@@ -1,5 +1,6 @@
 import { useEffect, use } from "react";
 import { PageContext } from "../../contexts/PageContext";
+import FollowerRequestUser from "../../ui/FollowerRequestUser";
 
 const followerRequests = () => {
   const title = use(PageContext);
@@ -10,20 +11,8 @@ const followerRequests = () => {
 
   return (
     <>
-      <div className="flex flex-col items-start">
-        <div className="flex w-full">
-          <div>image</div>
-          <div className="flex flex-2 items-start">
-            <div>displayname</div>
-            <div>username</div>
-          </div>
-          <div className="flex">
-            <div>Accept</div>
-            <div>Decline</div>
-          </div>
-        </div>
-        <div>description</div>
-      </div>
+      <FollowerRequestUser />
+      <FollowerRequestUser />
     </>
   );
 };
