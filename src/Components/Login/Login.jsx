@@ -48,7 +48,7 @@ const Login = () => {
           <div className="flex w-full p-6 lg:max-w-2xl">
             <Link
               to="/register"
-              className="w-full rounded-xl bg-emerald-600 p-1 text-white hover:bg-emerald-800"
+              className="w-full rounded-xl border p-1 hover:bg-gray-200"
             >
               Register
             </Link>
