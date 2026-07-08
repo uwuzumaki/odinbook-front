@@ -1,3 +1,4 @@
+import Login from "./Components/Login/Login";
 import Create from "./Components/Create/Create";
 import Index from "./Components/Index/Index";
 import Layout from "./Components/Layout/Layout";
@@ -9,14 +10,15 @@ import UserIndex from "./Components/UserIndex/UserIndex";
 import Following from "./Components/Following/Following";
 import Followers from "./Components/Followers/Followers";
 import FollowerRequests from "./Components/FollowerRequests/FollowerRequests";
+import Register from "./Components/Register/Register";
 
 const routes = [
   {
-    element: <div>Login</div>,
+    element: <Login />,
     path: "login",
   },
   {
-    element: <div>register</div>,
+    element: <Register />,
     path: "register",
   },
   {
