@@ -1,8 +1,14 @@
+import { use } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
+  };
+
+  const githubLogin = () => {
+    window.location.href = `${import.meta.env.VITE_DEV_URL}/auth/github`;
   };
 
   return (
@@ -41,7 +47,10 @@ const Login = () => {
               </button>
             </form>
             <div className="my-2">or</div>
-            <div className="w-full rounded-xl bg-slate-950 py-1 text-white hover:cursor-pointer hover:bg-slate-700">
+            <div
+              onClick={githubLogin}
+              className="w-full rounded-xl bg-slate-950 py-1 text-white hover:cursor-pointer hover:bg-slate-700"
+            >
               Continue with Github
             </div>
           </div>
