@@ -12,6 +12,8 @@ import Followers from "./Components/Followers/Followers";
 import FollowerRequests from "./Components/FollowerRequests/FollowerRequests";
 import Register from "./Components/Register/Register";
 
+import authLoader from "./loaders/authLoader";
+
 const routes = [
   {
     element: <Login />,
@@ -24,6 +26,7 @@ const routes = [
   {
     element: <Layout />,
     path: "/",
+    loader: authLoader,
     children: [
       {
         element: <Index />,
