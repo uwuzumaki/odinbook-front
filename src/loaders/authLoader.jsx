@@ -5,7 +5,6 @@ const authLoader = async () => {
   const url = `${import.meta.env.VITE_DEV_URL}/auth/verify`;
   try {
     const res = await axios.get(url, { withCredentials: true });
-    console.log(res);
     const user = res.data.user;
     return { user };
   } catch (err) {

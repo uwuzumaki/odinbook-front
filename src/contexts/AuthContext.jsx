@@ -12,7 +12,6 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     try {
       setUsername(loaderData.user.username);
-      console.log(loaderData);
       loaderData ? setAuthenticated(true) : null;
     } catch (err) {
       console.log(err);
