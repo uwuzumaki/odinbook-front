@@ -7,24 +7,24 @@ const CreateIcon = () => {
       xmlns="http://www.w3.org/2000/svg"
       fill="#000000"
       stroke="#000000"
-      stroke-width="1.5539999999999998"
+      strokeWidth="1.5539999999999998"
     >
-      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+      <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
       <g
         id="SVGRepo_tracerCarrier"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
         stroke="#CCCCCC"
-        stroke-width="0.252"
+        strokeWidth="0.252"
       ></g>
       <g id="SVGRepo_iconCarrier">
         {" "}
         <g
           fill="none"
-          fill-rule="evenodd"
+          fillRule="evenodd"
           stroke="#000000"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
           transform="translate(3 3)"
         >
           {" "}
