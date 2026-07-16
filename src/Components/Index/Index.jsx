@@ -9,6 +9,7 @@ const Index = () => {
   const title = use(PageContext);
   const auth = use(AuthContext);
   const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
   const url = `${import.meta.env.VITE_DEV_URL}/user/index`;
 
   const getPosts = async () => {
@@ -16,6 +17,7 @@ const Index = () => {
       const res = await axios.get(url, { withCredentials: true });
       console.log(res.data);
       setPosts(res.data);
+      setLoading(false);
     } catch (err) {
       console.log(err);
     }
@@ -26,12 +28,14 @@ const Index = () => {
     getPosts();
   }, []);
 
+  if (loading) {
+    return <div>Loading feed</div>;
+  }
+
   return (
     <>
       {posts.map((post) => (
-        <>
-          <Card key={post.id} post={post} />
-        </>
+        <Card key={post.id} post={post} />
       ))}
     </>
   );
