@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import updateLocale from "dayjs/plugin/updateLocale";
@@ -22,6 +22,12 @@ dayjs.updateLocale("en", {
 
 const Card = ({ post }) => {
   const [displayDate, setDisplayDate] = useState();
+  const navigate = useNavigate();
+
+  const linkToProfile = (e) => {
+    e.preventDefault();
+    navigate(`/u/${post.postAuthor.id}`);
+  };
 
   useEffect(() => {
     const postDate = dayjs(post.createdAt);
@@ -43,9 +49,11 @@ const Card = ({ post }) => {
       className="-mx-px -mt-px block border border-gray-200 p-4 hover:cursor-pointer hover:bg-slate-50"
     >
       <div className="flex justify-between">
-        <div className="flex">
+        <div onClick={linkToProfile} className="flex">
           <div className="mr-1 h-8 w-8 rounded-full border">img</div>
-          <div className="mr-2">{post.postAuthor.displayName}</div>
+          <div className="mr-2 hover:underline">
+            {post.postAuthor.displayName}
+          </div>
           <div className="text-gray-600">@{post.postAuthor.username}</div>
         </div>
         <div className="text-gray-600">{displayDate}</div>
