@@ -1,7 +1,42 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
+import updateLocale from "dayjs/plugin/updateLocale";
+
+dayjs.extend(relativeTime);
+dayjs.extend(updateLocale);
+
+dayjs.updateLocale("en", {
+  relativeTime: {
+    past: "%s",
+    s: "%ds",
+    m: "m",
+    mm: "%dm",
+    h: "h",
+    hh: "%dh",
+    d: "d",
+    dd: "%dd",
+  },
+});
 
 const Card = ({ post }) => {
+  const [displayDate, setDisplayDate] = useState();
+
+  useEffect(() => {
+    const postDate = dayjs(post.createdAt);
+    const timeDiff = dayjs().diff(postDate);
+
+    if (timeDiff < 86400000) {
+      setDisplayDate(postDate.fromNow()); //
+    } else if (timeDiff < 259200000) {
+      const days = Math.floor(timeDiff / 86400000);
+      setDisplayDate(days + "d");
+    } else {
+      setDisplayDate(postDate.format("MMM D/YY"));
+    }
+  }, [post.createdAt]);
+
   return (
     <Link
       to={`/p/${post.id}`}
@@ -13,7 +48,7 @@ const Card = ({ post }) => {
           <div className="mr-2">{post.postAuthor.displayName}</div>
           <div className="text-gray-600">@{post.postAuthor.username}</div>
         </div>
-        <div className="text-gray-600">{post.createdAt}</div>
+        <div className="text-gray-600">{displayDate}</div>
       </div>
       <div className="mt-4 flex text-left">{post.content}</div>
       <div>Image</div>
