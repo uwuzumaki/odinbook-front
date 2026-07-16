@@ -43,7 +43,7 @@ const Profile = () => {
         <div>description</div>
       </div>
       <div className="mb-1 w-full min-w-90 sm:max-w-146 sm:min-w-90">
-        <Card />
+        placeholder
       </div>
     </>
   );
