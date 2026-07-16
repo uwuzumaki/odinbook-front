@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import updateLocale from "dayjs/plugin/updateLocale";
+import { CommentIcon, LikeIcon } from "./Icons";
 
 dayjs.extend(relativeTime);
 dayjs.extend(updateLocale);
@@ -61,8 +62,14 @@ const Card = ({ post }) => {
       <div className="mt-4 flex text-left">{post.content}</div>
       <div>Image</div>
       <div className="flex text-gray-600">
-        <div className="text-sm">likes {post.like.length}</div>
-        <div className="text-sm">comments {post.comments.length}</div>
+        <div className="mr-8 flex text-sm">
+          <CommentIcon />
+          <div className="ml-1">{post.comments.length}</div>
+        </div>
+        <div className="flex text-sm">
+          <LikeIcon />
+          <div className="ml-1">{post.like.length}</div>
+        </div>
       </div>
     </Link>
   );
