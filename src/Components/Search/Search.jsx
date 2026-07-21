@@ -60,7 +60,11 @@ const Search = () => {
         </button>
       </form>
       <div>
-        {users ? users.map((user) => <User key={user.id} />) : <>{foundText}</>}
+        {users ? (
+          users.map((user) => <User key={user.id} data={user} />)
+        ) : (
+          <>{foundText}</>
+        )}
       </div>
     </>
   );
