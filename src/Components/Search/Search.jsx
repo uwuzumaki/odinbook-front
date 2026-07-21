@@ -1,12 +1,16 @@
 import { useState, useEffect, use } from "react";
+import axios from "axios";
 import { PageContext } from "../../contexts/PageContext";
 import { SearchIcon } from "../../ui/Icons";
+import User from "../../ui/User";
 
 // Search for username then displayname and display both
 // Loading skeletons for when grabbing data
 // bsky layout
 const Search = () => {
   const [input, setInput] = useState("");
+  const [users, setUsers] = useState(null);
+  const [foundText, setFoundText] = useState("");
   const title = use(PageContext);
 
   useEffect(() => {
@@ -15,13 +19,28 @@ const Search = () => {
 
   const handleChange = (e) => {
     setInput(e.target.value);
-    console.log(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(input);
-    //submit to backend
+    setUsers(null);
+    const url = `${import.meta.env.VITE_DEV_URL}/user/findUsers`;
+    const data = { username: input };
+    try {
+      const res = await axios.post(url, data, { withCredentials: true });
+      console.log(res.data);
+      if (res.data == null) {
+        setUsers(null);
+        setFoundText("No users found");
+      } else {
+        setUsers(res.data);
+        setFoundText("");
+      }
+    } catch (err) {
+      console.log(err);
+    } finally {
+      setInput("");
+    }
   };
 
   return (
@@ -40,7 +59,9 @@ const Search = () => {
           Search
         </button>
       </form>
-      <div>results here</div>
+      <div>
+        {users ? users.map((user) => <User key={user.id} />) : <>{foundText}</>}
+      </div>
     </>
   );
 };
