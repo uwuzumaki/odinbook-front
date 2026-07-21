@@ -1,6 +1,8 @@
 import { useState, use, useEffect } from "react";
 import { PageContext } from "../../contexts/PageContext";
 import { FileIcon } from "../../ui/Icons";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 // after creating the post go to the post
 // bsky layout
@@ -8,6 +10,8 @@ import { FileIcon } from "../../ui/Icons";
 const Create = () => {
   const [input, setInput] = useState("");
   const title = use(PageContext);
+  const navigate = useNavigate();
+  const url = `${import.meta.env.VITE_DEV_URL}/user/createPost`;
 
   useEffect(() => {
     title.setPageTitle("Create");
@@ -15,14 +19,20 @@ const Create = () => {
 
   const handleChange = (e) => {
     setInput(e.target.value);
-    console.log(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(input);
-    //submit to backend
+    const data = { content: input };
+    try {
+      const res = await axios.post(url, data, { withCredentials: true });
+      console.log(res.data);
+      navigate(`/p/${res.data.id}`);
+    } catch (err) {
+      console.log(err);
+    }
   };
+
   return (
     <>
       <form
